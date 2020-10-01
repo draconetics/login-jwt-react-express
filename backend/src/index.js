@@ -9,6 +9,14 @@ app.get('/',function(req,res){
     res.send(element);
   });
   
+app.use(function (req, res, next) {
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
+  res.setHeader('Access-Control-Allow-Headers', "Origin, X-Requested-With, Content-Type, Accept, Authorization");
+  res.setHeader('Access-Control-Allow-Credentials', true);
+  next();
+  });
+
 //routes
 const userRouter = require('./user/user.route')
 app.use('/', userRouter);

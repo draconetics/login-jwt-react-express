@@ -1,0 +1,60 @@
+.container{
+    width: 100%;
+    height: 100%;
+    display: relative;
+    
+}
+
+.login-container{
+
+    background-color: #f7f7f7;
+    padding: 2rem;
+    border: 1px solid rgba(0,0,0,.1);
+    height: auto;
+    width: 400px;
+    max-width: 100%;
+    box-shadow: 1px 1px 1px rgba(0,0,0,.2);
+    border-radius: .2rem;
+    margin: 2rem auto;
+    position: relative;
+}
+
+.login-logo{
+    width: 100%;
+    text-align: center;
+    margin: 1rem 0;
+}
+
+.login-logo img{
+    width: 150px;
+    border-radius: 50%;
+}
+
+.login-form button{
+    margin: 1rem 0;
+}
+
+.container .message{
+    position: absolute;
+    z-index: 2;
+    width: 80%;
+    top: 0px;
+    text-align: center;
+    background-color:rgba(182, 220, 254, .5);
+    padding: .5rem;
+    border-radius: .3rem;
+    margin: .5rem;
+    opacity: 0;
+}
+
+.message.show{
+    animation-name: visibleEffect;
+    animation-duration: 5s;
+}
+
+@keyframes visibleEffect {
+    0%   {opacity: 0;}
+    30%  {opacity: 1;}
+    80%  {opacity: 1;}
+    100% {opacity: 0;}
+  }

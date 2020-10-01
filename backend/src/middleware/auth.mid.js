@@ -4,22 +4,23 @@ const { userRepository } = require("../user/dependency");
 const auth = async(req, res, next) => {
     try 
     {
-        //console.log("entering to authentication")
+        console.log("entering to authentication")
         if(!req.header('Authorization')){
             let error = new Error('auth - User NO Authenticated')
             error.code = 403
+            console.log("no header founded")
             throw error
         }
             
-
+ 
         const token = req.header('Authorization').replace('Bearer ', '')
         const data = jwt.verify(token, 'secret')
-        //console.log("this is data: ")
+        console.log("this is data: ")
         console.log(data)
     
         const user = await userRepository.findByIdAndToken(data._id, token)
         if (!user) {
-            //console.log("no user founded")
+            console.log("No user with that token")
             let error = new Error('auth - error user id or token')
             error.code = 403
             throw error

@@ -29,7 +29,7 @@ class UserRepository {
             user.tokens = user.tokens.concat({token})
             await this.saveUser(user)
             //console.log(token)
-            return token
+            return {user,token}
 
         }catch(e){
             throw e;    

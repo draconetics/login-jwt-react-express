@@ -17,9 +17,9 @@ class UserService {
   async createAndLogin( userBody ) {
     try{
           let user = await this.userRepository.create( userBody );
-          let token = await this.userRepository.saveAuthToken(user) 
+
   
-          return {user, token: token, info:"nothing"};
+          return {user};
     }catch(e) {
           throw e
     }
@@ -31,9 +31,9 @@ async login( loginBody ) {
     
     try{
         console.log("service login")
-        const user = await this.userRepository.findByCredentials( email, password )
-        await this.userRepository.saveAuthToken(user)
-        return {results: user}
+        const foundUser = await this.userRepository.findByCredentials( email, password )
+        const userWithToken = await this.userRepository.saveAuthToken(foundUser)
+        return userWithToken;
     
     }catch(e){
         throw e

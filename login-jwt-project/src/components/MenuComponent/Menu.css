@@ -1,0 +1,39 @@
+
+    .main-nav{
+        max-width: 1100px;
+        width: 100%;
+        margin: auto;
+        display: flex;
+        justify-content: space-around;
+
+    }
+
+    .main-nav .main-menu{
+        flex: 1;
+    }
+
+    .main-nav ul{
+        display: flex;
+        justify-content: flex-start;
+    }
+
+    .main-nav ul a{
+        color: #aaa;
+        font-size: .9rem;
+    }
+
+    .main-nav ul a:hover,.main-nav ul a.active{
+        color: #fff;
+        font-weight: bold;
+    }
+
+
+    .main-nav ul li{
+        margin: 1rem;
+    }
+
+    .main-nav .logo{
+        color: #fff;
+        font-weight: bold;
+        padding: 1rem;
+    }
