@@ -12,7 +12,9 @@ export const login = async (dispatch,value)=>{
                       dispatch({type:'UPDATE_TOKEN', value: resp.data.token})
                       saveUserLocally(resp.data);
                   })
-                  .catch(e=>console.log(e))
+                  .catch(e=>{                     
+                        throw e
+                  })
 }
 
 const saveUserLocally = (data)=>{
@@ -31,7 +33,7 @@ export const logout = async (dispatch, token)=>{
                       dispatch({type:'UPDATE_TOKEN', value: ""});
                       deleteUserLocally();
                   })
-                  .catch(e=>console.log(e))
+                  .catch(e=>{throw e})
 }
 
 const deleteUserLocally = ()=>{

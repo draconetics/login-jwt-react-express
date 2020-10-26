@@ -1,13 +1,23 @@
 import React from 'react'
 import './Home.css';
 
-
 const Home = (props)=>{
-      
+    console.log(props.location.state?props.location.state.message:"");
     
+    const showAlert = () => {
+        if(props.location && props.location.state){
+            if(props.location.state.type && props.location.state.message){
+                let type = props.location.state.type;
+                let message = props.location.state.message;
+                return <div className={"alert " + type}>{message}</div>
+            }
+        }
+        return null;
+    }
 
     return (
     <>
+        {showAlert()}
     <div className="user-profile">
         {props.loggedUser?
             (<ul>

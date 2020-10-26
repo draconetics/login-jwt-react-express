@@ -36,6 +36,7 @@ async login( loginBody ) {
         return userWithToken;
     
     }catch(e){
+        console.log(e);
         throw e
     }
 }

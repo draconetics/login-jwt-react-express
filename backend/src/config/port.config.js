@@ -1,5 +1,5 @@
 //default development port
-let PORT = 3000;
+let PORT = 3001;
 
 if (process.env.NODE_ENV === 'test') 
 {

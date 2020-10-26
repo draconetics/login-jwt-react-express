@@ -5,9 +5,9 @@ import { logout } from '../../actions/index'
 
   const mapStateToProps = state =>{
       return {
-          loggedUser: state.loggedUser,
-          isLogged: state.isLogged,
-          token: state.token
+          loggedUser: state.AuthReducer.loggedUser,
+          isLogged: state.AuthReducer.isLogged,
+          token: state.AuthReducer.token
       }
   }
  

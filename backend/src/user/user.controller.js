@@ -34,10 +34,9 @@ class UserController {
         try{
             const data  = await this.userService.login( req.body )    
             
-            return res.status(200).json(data);    
+            return res.status(200).json({code:200,message:"success", data});    
         }catch(e){
-            this.logger.logError(e, req)
-            return res.status(this.logger.statusCode).json(this.logger.getClientError())
+            return res.status(e.code).json({code:e.code,message:e.message})
         }           
             
     }

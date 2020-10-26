@@ -4,9 +4,10 @@ import { connect } from 'react-redux';
 
 
   const mapStateToProps = state =>{
+      //console.log(state);
       return {
-          loggedUser: state.user,
-          isLogged: state.isLogged
+          loggedUser: state.AuthReducer.loggedUser,
+          isLogged: state.AuthReducer.isLogged
       }
   }
  

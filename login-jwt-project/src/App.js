@@ -21,9 +21,7 @@ function App() {
       <BrowserRouter>
         <Menu></Menu>
         <Switch>
-            <Route exact path="/">
-                  <Home></Home>
-            </Route>
+            <Route exact path={["/","/home"]} component={Home}></Route>
             <Route path="/login" component={LoginForm}></Route>
             <Route path="/register" component={RegisterForm}></Route>
             <Route path='/404' component={NotFoundPage} />

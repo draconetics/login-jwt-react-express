@@ -47,6 +47,7 @@
     opacity: 0;
 }
 
+/*
 .message.show{
     animation-name: visibleEffect;
     animation-duration: 5s;
@@ -58,3 +59,4 @@
     80%  {opacity: 1;}
     100% {opacity: 0;}
   }
+*/
